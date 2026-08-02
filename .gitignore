@@ -1,0 +1,33 @@
+# ---- secrets: never commit ----
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+
+# ---- python ----
+engine/.venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+engine/uv.lock.bak
+
+# ---- data lake (regenerable, large) ----
+data/raw/**
+data/curated/**
+data/artifacts/**
+!data/**/.gitkeep
+
+# ---- runtime ----
+logs/
+*.log
+*.duckdb
+*.duckdb.wal
+
+# ---- obsidian local-machine state ----
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json

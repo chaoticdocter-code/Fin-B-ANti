@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Write-Output \"=== D:\\\\Fin B contents ===\"; if \\(Test-Path \"D:\\\\Fin B\"\\) { Get-ChildItem \"D:\\\\Fin B\" -Force | Select-Object Mode,Length,Name | Format-Table -AutoSize | Out-String } else { Write-Output \"MISSING\" }; Write-Output \"=== Drive space ===\"; Get-PSDrive -PSProvider FileSystem | Select-Object Name,@{n='FreeGB';e={[math]::Round\\($_.Free/1GB,1\\)}},@{n='UsedGB';e={[math]::Round\\($_.Used/1GB,1\\)}} | Format-Table -AutoSize | Out-String)",
+      "PowerShell(foreach \\($c in @\\('python','py','pip','node','npm','git','uv','conda','docker'\\)\\) { $g = Get-Command $c -ErrorAction SilentlyContinue; if \\($g\\) { Write-Output \"$c => $\\($g.Source\\)\" } else { Write-Output \"$c => NOT FOUND\" } })",
+      "PowerShell(Write-Output \"=== python --version ===\"; try { & python --version } catch { Write-Output \"STUB/FAIL: $_\" }; Write-Output \"=== uv version ===\"; & uv --version; Write-Output \"=== uv python list ===\"; & uv python list 2>$null | Out-String; Write-Output \"=== .obsidian ===\"; Get-ChildItem \"D:\\\\Fin B\\\\.obsidian\" -Force -Recurse | Select-Object FullName | Out-String; Write-Output \"=== Welcome.md ===\"; Get-Content \"D:\\\\Fin B\\\\Welcome.md\" | Out-String)",
+      "PowerShell($paths = @\\(\"$env:LOCALAPPDATA\\\\Obsidian\\\\Obsidian.exe\", \"$env:PROGRAMFILES\\\\Obsidian\\\\Obsidian.exe\", \"${env:PROGRAMFILES\\(X86\\)}\\\\Obsidian\\\\Obsidian.exe\"\\); foreach \\($p in $paths\\) { if \\(Test-Path $p\\) { Write-Output \"FOUND: $p\" } }; Write-Output \"=== winget obsidian ===\"; try { & winget list --id Obsidian.Obsidian --exact 2>$null | Out-String } catch { Write-Output \"winget query failed\" }; Write-Output \"=== .claude in vault ===\"; Get-ChildItem \"D:\\\\Fin B\\\\.claude\" -Force -Recurse -ErrorAction SilentlyContinue | Select-Object FullName | Out-String)"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "userIgnoreFilters": [
+    "engine",
+    "data",
+    "logs"
+  ],
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "90-Reference/attachments",
+  "readableLineLength": true,
+  "showLineNumber": false,
+  "promptDelete": true,
+  "trashOption": "system"
+}
